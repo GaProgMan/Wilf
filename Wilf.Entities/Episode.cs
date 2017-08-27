@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Wilf.Entities
+﻿namespace Wilf.Entities
 {
     /// <summary>
     /// Represents an Episode of a TV show. 
