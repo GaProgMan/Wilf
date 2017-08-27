@@ -4,6 +4,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Wilf.Config;
 using Wilf.DAL;
 using Wilf.Facade;
+using Wilf.Facade.ApiFacades;
+using Wilf.Facade.ControllerFacades;
 using Wilf.Persistence;
 
 namespace Wilf.UI
@@ -24,8 +26,9 @@ namespace Wilf.UI
 
         public static void AddFacades(this IServiceCollection serviceCollection)
         {
+            serviceCollection.AddTransient<IBaseApiFacade, BaseApiFacade>();
             serviceCollection.AddTransient<IHomeFacade, HomeFacade>();
-            serviceCollection.AddTransient<IApiFacade, ApiFacade>();
+            serviceCollection.AddTransient<IDatabaseFacade, DatabaseFacade>();
         }
 
         public static void AddTransientServices(this IServiceCollection serviceCollection)

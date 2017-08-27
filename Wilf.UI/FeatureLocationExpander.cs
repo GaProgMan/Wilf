@@ -2,6 +2,7 @@
 using JetBrains.Annotations;
 using Microsoft.AspNetCore.Mvc.Razor;
 
+[assembly: AspMvcViewLocationFormat("~/Api/{1}{0}.cshtml")]
 [assembly: AspMvcViewLocationFormat("~/Features/{1}/{0}.cshtml")]
 [assembly: AspMvcViewLocationFormat("~/Features/Shared/{0}.cshtml")]
 namespace Wilf.UI
@@ -28,6 +29,7 @@ namespace Wilf.UI
             // Replace /Views with /Features
             return new string[]
             {
+                "/Api/{1}/{0}.cshtml",
                 "/Features/{1}/{0}.cshtml",
                 "/Features/Shared/{0}.cshtml"
             };
