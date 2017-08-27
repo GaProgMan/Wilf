@@ -1,14 +1,14 @@
 ﻿using System;
 using Wilf.DAL;
 
-namespace Wilf.Facade
+namespace Wilf.Facade.ApiFacades
 {
-    public class ApiFacade : IApiFacade
+    public class BaseApiFacade : IBaseApiFacade
     {
         private readonly IDatabaseService _databaseService;
         private readonly ISeasonService _seasonService;
 
-        public ApiFacade(IDatabaseService databaseService, ISeasonService seasonService)
+        public BaseApiFacade(IDatabaseService databaseService, ISeasonService seasonService)
         {
             _databaseService = databaseService;
             _seasonService = seasonService;

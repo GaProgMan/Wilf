@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Wilf.Facade.ViewModels;
 
-namespace Wilf.Facade
+namespace Wilf.Facade.ControllerFacades
 {
     public interface IHomeFacade
     {

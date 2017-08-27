@@ -1,6 +1,6 @@
-﻿namespace Wilf.Facade
+﻿namespace Wilf.Facade.ApiFacades
 {
-    public interface IApiFacade
+    public interface IBaseApiFacade
     {
         string ApiUseageString();
         bool DropData();

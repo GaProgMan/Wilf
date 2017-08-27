@@ -3,7 +3,7 @@ using System.Linq;
 using Wilf.DAL;
 using Wilf.Facade.ViewModels;
 
-namespace Wilf.Facade
+namespace Wilf.Facade.ControllerFacades
 {
     public class HomeFacade : IHomeFacade
     {
