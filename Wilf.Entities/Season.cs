@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace Wilf.Entities
 {
@@ -16,6 +17,6 @@ namespace Wilf.Entities
         public string Name { get; set; }
         public string Descritpion { get; set; }
         
-        public ICollection<Episode> Episodes { get; set; }
+        public ICollection<Episode> Episodes { get; set; } = new Collection<Episode>();
     }
 }
