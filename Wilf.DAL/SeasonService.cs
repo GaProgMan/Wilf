@@ -1,16 +1,19 @@
-﻿using System;
+﻿using System.Collections.Generic;
+using System.Linq;
 using Wilf.Entities;
 using Wilf.Persistence;
 
 namespace Wilf.DAL
 {
-    public class SeasonService : ISeasonService
+    public class SeasonService : BaseWilfService, ISeasonService
     {
-        private readonly WilfContext _wilfContext;
-
-        public SeasonService(WilfContext wilfContext)
+        public SeasonService(WilfContext wilfContext) : base(wilfContext)
         {
-            _wilfContext = wilfContext;
+        }
+
+        public IEnumerable<Season> GetAllSeasons(bool includeNavigationProperties = true)
+        {
+            return BaseReadOnlyQuery<Season>(includeNavigationProperties);
         }
 
         public Season GetOrCreate(int? id)

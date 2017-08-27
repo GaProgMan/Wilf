@@ -9,7 +9,7 @@ namespace Wilf.Entities
     /// <see cref="SeasonId"/> is the Primary Key
     /// <see cref="Episodes"/> is the collection of episodes which make up this season
     /// </remarks>
-    public class Season : BaseAudit, ICommonProperties
+    public class Season : BaseWilfEntity, ICommonProperties
     {
         public int SeasonId { get; set; }
         public int SeasonNumber { get; set; }
