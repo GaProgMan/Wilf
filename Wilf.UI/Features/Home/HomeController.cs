@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Wilf.DAL;
 using Wilf.Facade;
+using Wilf.Facade.ControllerFacades;
 using Wilf.UI.Models;
 
 namespace Wilf.UI.Features.Home
@@ -19,7 +20,7 @@ namespace Wilf.UI.Features.Home
         public IActionResult Index()
         {
             var seasons = _homeFacade.GetAllSeasons();
-            return View();
+            return View(seasons);
         }
 
         public IActionResult About()
