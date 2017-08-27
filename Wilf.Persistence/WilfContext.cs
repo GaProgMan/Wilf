@@ -20,7 +20,7 @@ namespace Wilf.Persistence
             modelBuilder.AddForeignKeys();
         }
 
-        public override async Task<int> SaveChangesAsync(bool acceptAllChangesOnSuccess,
+        public override async Task<int> SaveChangesAsync(bool acceptAllChangesOnSuccess = true,
             CancellationToken cancellationToken = default(CancellationToken))
         {
             ChangeTracker.ApplyAuditInformation();

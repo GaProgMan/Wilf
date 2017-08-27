@@ -19,7 +19,7 @@ namespace Wilf.Persistence
         ///     A task that represents the asynchronous save operation. The task result contains the
         ///     number of state entries written to the database.
         /// </returns>
-        Task<int> SaveChangesAsync(bool acceptAllChangesOnSuccess,
+        Task<int> SaveChangesAsync(bool acceptAllChangesOnSuccess = true,
             CancellationToken cancellationToken = default(CancellationToken));
 
         DbSet<Season> Seasons { get; set; }
