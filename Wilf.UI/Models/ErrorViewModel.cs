@@ -1,5 +1,3 @@
-using System;
-
 namespace Wilf.UI.Models
 {
     public class ErrorViewModel

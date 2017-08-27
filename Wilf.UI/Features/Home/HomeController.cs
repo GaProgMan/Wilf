@@ -1,25 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Wilf.DAL;
+using Wilf.Facade;
 using Wilf.UI.Models;
 
-namespace Wilf.UI.Controllers
+namespace Wilf.UI.Features.Home
 {
     public class HomeController : Controller
     {
-        private ISeasonService _seasonService;
-
-        public HomeController(ISeasonService seasonService)
+        private IHomeFacade _homeFacade;
+        public HomeController(IHomeFacade homeFacade)
         {
-            _seasonService = seasonService;
+            _homeFacade = homeFacade;
         }
 
         public IActionResult Index()
         {
+            var seasons = _homeFacade.GetAllSeasons();
             return View();
         }
 

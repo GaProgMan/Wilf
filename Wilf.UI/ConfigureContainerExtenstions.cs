@@ -1,7 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Mvc.Razor;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Wilf.Config;
 using Wilf.DAL;
+using Wilf.Facade;
 using Wilf.Persistence;
 
 namespace Wilf.UI
@@ -20,14 +22,29 @@ namespace Wilf.UI
                 options.UseSqlite(connectionString ?? DbConnectionString));
         }
 
+        public static void AddFacades(this IServiceCollection serviceCollection)
+        {
+            serviceCollection.AddTransient<IHomeFacade, HomeFacade>();
+            serviceCollection.AddTransient<IApiFacade, ApiFacade>();
+        }
+
         public static void AddTransientServices(this IServiceCollection serviceCollection)
         {
             serviceCollection.AddTransient<ISeasonService, SeasonService>();
+            serviceCollection.AddTransient<IDatabaseService, DatabaseService>();
         }
 
         public static void AddCustomizedMvc(this IServiceCollection serviceCollection)
         {
             serviceCollection.AddMvc();
+        }
+
+        public static void AddFeatureFolders(this IServiceCollection serviceCollection)
+        {
+            serviceCollection.Configure<RazorViewEngineOptions>(options =>
+            {
+                options.ViewLocationExpanders.Add(new FeatureLocationExpander());
+            });
         }
     }
 }
