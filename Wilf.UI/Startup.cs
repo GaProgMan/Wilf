@@ -19,8 +19,10 @@ namespace Wilf.UI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext();
+            services.AddFacades();
             services.AddTransientServices();
             services.AddCustomizedMvc();
+            services.AddFeatureFolders();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -38,7 +40,6 @@ namespace Wilf.UI
             app.GnuTerryPratchett();
             app.UseStaticFiles();
             app.UseCustomisedMvc();
-            app.EnsureDatabaseIsSeeded(env.IsDevelopment());
         }
     }
 }
