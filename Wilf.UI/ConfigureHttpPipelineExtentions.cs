@@ -19,24 +19,5 @@ namespace Wilf.UI
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
         }
-        
-        public static int EnsureDatabaseIsSeeded(this IApplicationBuilder applicationBuilder,
-            bool autoMigrateDatabase = false)
-        {
-            // seed the database using an extension method
-            using (var serviceScope = applicationBuilder.ApplicationServices.GetRequiredService<IServiceScopeFactory>()
-                .CreateScope())
-            {
-                var context = serviceScope.ServiceProvider.GetService<WilfContext>();
-                if (autoMigrateDatabase)
-                {
-                    //context.Database.Migrate();
-                }
-                // TODO Add method to seed the database
-                //return context.EnsureSeedData();
-
-                return default(int);
-            }
-        }
     }
 }
