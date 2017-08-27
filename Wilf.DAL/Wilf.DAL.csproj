@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Wilf.Entities\Wilf.Entities.csproj">
+      <Project>{B3787530-02EC-42E1-B99A-902AF3715C05}</Project>
+      <Name>Wilf.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Wilf.Persistence\Wilf.Persistence.csproj" />
+  </ItemGroup>
+</Project>
