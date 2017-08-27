@@ -13,8 +13,6 @@ namespace Wilf.Persistence
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.HasDefaultSchema("Wilf");
-
             modelBuilder.AddPrimaryKeys();
             
             modelBuilder.AddForeignKeys();
