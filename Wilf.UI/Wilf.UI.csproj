@@ -4,6 +4,7 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="ClacksMiddlware" Version="2.0.0" />
+    <PackageReference Include="JetBrains.Annotations" Version="11.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0" />
   </ItemGroup>
   <ItemGroup>
@@ -11,7 +12,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Wilf.Config\Wilf.Config.csproj" />
-    <ProjectReference Include="..\Wilf.DAL\Wilf.DAL.csproj" />
+    <ProjectReference Include="..\Wilf.Facade\Wilf.Facade.csproj" />
     <ProjectReference Include="..\Wilf.Persistence\Wilf.Persistence.csproj" />
   </ItemGroup>
 </Project>
