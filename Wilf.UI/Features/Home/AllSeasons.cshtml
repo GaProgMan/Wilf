@@ -1,0 +1,31 @@
+﻿@using System.Collections.Generic;
+@using Wilf.Facade.ViewModels;
+@model IEnumerable<SeasonViewModel>
+
+<section class="seasons">
+    <div class="container">
+        <div class="row">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>Season Name</th>
+                        <th>Season Number</th>
+                        <th>Description</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach (var season in Model)
+                    {
+                        <tr>
+                            <td>@season.Name</td>
+                            <td>@season.SeasonNumber</td>
+                            <td>@season.Description</td>
+                        </tr>
+                    }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>

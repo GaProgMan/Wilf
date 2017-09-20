@@ -11,8 +11,8 @@ using Wilf.Persistence;
 namespace Wilf.Persistence.Migrations
 {
     [DbContext(typeof(WilfContext))]
-    [Migration("20170827220222_RemovedSchemaAsNotSupportedInSQlite")]
-    partial class RemovedSchemaAsNotSupportedInSQlite
+    [Migration("20170920200111_InitialMigration")]
+    partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

@@ -11,7 +11,7 @@ namespace Wilf.UI.Features.Home
 {
     public class HomeController : Controller
     {
-        private IHomeFacade _homeFacade;
+        private readonly IHomeFacade _homeFacade;
         public HomeController(IHomeFacade homeFacade)
         {
             _homeFacade = homeFacade;

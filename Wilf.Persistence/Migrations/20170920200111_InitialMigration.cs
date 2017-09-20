@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 using System;
+using System.Collections.Generic;
 
 namespace Wilf.Persistence.Migrations
 {
@@ -7,12 +8,8 @@ namespace Wilf.Persistence.Migrations
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.EnsureSchema(
-                name: "Wilf");
-
             migrationBuilder.CreateTable(
                 name: "Seasons",
-                schema: "Wilf",
                 columns: table => new
                 {
                     SeasonId = table.Column<int>(type: "INTEGER", nullable: false)
@@ -30,7 +27,6 @@ namespace Wilf.Persistence.Migrations
 
             migrationBuilder.CreateTable(
                 name: "Episodes",
-                schema: "Wilf",
                 columns: table => new
                 {
                     EpisodeId = table.Column<int>(type: "INTEGER", nullable: false)
@@ -48,7 +44,6 @@ namespace Wilf.Persistence.Migrations
                     table.ForeignKey(
                         name: "FK_Episodes_Seasons_SeasonId",
                         column: x => x.SeasonId,
-                        principalSchema: "Wilf",
                         principalTable: "Seasons",
                         principalColumn: "SeasonId",
                         onDelete: ReferentialAction.Cascade);
@@ -56,7 +51,6 @@ namespace Wilf.Persistence.Migrations
 
             migrationBuilder.CreateIndex(
                 name: "IX_Episodes_SeasonId",
-                schema: "Wilf",
                 table: "Episodes",
                 column: "SeasonId");
         }
@@ -64,12 +58,10 @@ namespace Wilf.Persistence.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Episodes",
-                schema: "Wilf");
+                name: "Episodes");
 
             migrationBuilder.DropTable(
-                name: "Seasons",
-                schema: "Wilf");
+                name: "Seasons");
         }
     }
 }
